@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/images/logo.svg";
-import {FaUser, FaSignOutAlt, FaSignoutAlt, FaBuilding} from "react-icons/fa";  
+import { FaUser, FaSignOutAlt, FaSignoutAlt, FaBuilding } from "react-icons/fa";
 const Header = () => {
   return (
     <header className="bg-gray-100">
@@ -26,13 +26,13 @@ const Header = () => {
                 </Link>
                 {/* <!-- Logged In Only --> */}
                 <Link
-                  href="/bookings.html"
+                  href="/bookings"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
                 >
                   Bookings
                 </Link>
                 <Link
-                  href="/add-room.html"
+                  href="/rooms/add"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
                 >
                   Add Room
@@ -43,14 +43,31 @@ const Header = () => {
           {/* <!-- Right Side Menu --> */}
           <div className="ml-auto">
             <div className="ml-4 flex items-center md:ml-6">
-              <Link href="my-rooms.html">
-              <FaBuilding className="inline mr-1" /> My Rooms
+              <Link href="/rooms/my">
+                <FaBuilding className="inline mr-1" /> My Rooms
               </Link>
               <Link
-                href="login.html"
+                href="/signout"
                 className="mx-3 text-gray-800 hover:text-gray-600"
               >
-                <FaSignOutAlt className="inline mr-1" />Sign Out
+                <FaSignOutAlt className="inline mr-1" />
+                Sign Out
+              </Link>
+
+              <Link
+                href="/register"
+                className="mx-3 text-gray-800 hover:text-gray-600"
+              >
+                <FaSignOutAlt className="inline mr-1" />
+                Register
+              </Link>
+
+              <Link
+                href="/login"
+                className="mx-3 text-gray-800 hover:text-gray-600"
+              >
+                <FaSignOutAlt className="inline mr-1" />
+                Login
               </Link>
             </div>
           </div>
@@ -61,20 +78,20 @@ const Header = () => {
       <div className="md:hidden">
         <nav className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
           <Link
-            href="/"
+            href="/rooms/my"
             className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
           >
             Rooms
           </Link>
           {/* <!-- Logged In Only --> */}
           <Link
-            href="/bookings.html"
+            href="/bookings"
             className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
           >
             Bookings
           </Link>
           <Link
-            href="/add-room.html"
+            href="/rooms/add"
             className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white"
           >
             Add Room
